@@ -1,0 +1,612 @@
+1.Question: What is the exact output of this code?
+
+class A {
+}
+public class B{
+void m1(){
+System.out.println("This is method of Class B");
+}
+}
+public class C{
+public static void main(String[] args){
+B objB = new B();
+System.out.print("This is Class C");
+objB.m1();
+}
+}
+
+Output :-
+A. This is method of Class B
+B. This is Class C.
+C. This is Class C, This is method of Class B.
+D. Compilation Error.
+
+Answer: C.This is Class C,This is method of Class B.
+Explanation: First MAIN METHOD will be executed then its goes to object class.
+ ----------------------------------------------------------------------------------------------------------------------------         
+2.Question: What is the output of this code?
+Note: Save this code as GlobalClass.java, Compile it and execute it.
+
+class A {
+public static void main(String[] args) {
+System.out.print("This is Class A");
+}
+}
+class B {
+public static void main(String[] args) {
+System.out.print("This is Class B");
+}
+}
+class C {
+public static void main(String[] args) {
+System.out.print("This is Class C");
+}
+}
+class D {
+}
+Output :-
+A. In a Class, Cannot be define more than one Main method.
+B. Code successfully compile and Execute.
+C. NoClassDefFoundError.
+D. None of the above.
+
+Answer:B.Code successfully compile and Execute.
+Explanation:Every class have a separate MAIN METHOD 
+-------------------------------------------------------------------------
+3.Question: What is the output of this code?
+
+public class DemoTestArrays {
+public static void main(String[] args) {
+int arrOne[] = { 1, 2, 3, 4, 5 };
+int arrTwo[] = { 0, 0, 0, 0, 0 };
+for (int i = 0; i < arrOne.length; i++) {
+arrTwo[i] = arrOne[arrOne.length - i - 1];
+}
+System.out.println(Arrays.toString(arrTwo));
+}
+}
+Output :-
+A. [0, 0, 0, 0, 0].
+B. [5, 4, 3, 2, 1].
+C. [1, 2, 3, 4, 5].
+D. Runtime Error.
+
+Answer:B.[5, 4, 3, 2, 1]. 
+Explanation:arrOne value sorted in arrTwo in desending or reverse order.
+-------------------------------------------------------------------------------------
+
+4.Question: What is the output of this code?
+
+public class DemoTestClass {
+public static void main(String[] args) {
+String[] elements = { "AAA", "BBB", "CCC" };
+String first = (elements.length > 0) ? elements[0] : null;
+System.out.println(first);
+}
+}
+Output :-
+A. BBB.
+B. CCC.
+C. AAA.
+D. Runtime Error.
+
+Answer: C.AAA
+Explanation:element at 0 index is AAA.
+----------------------------------------------------------------------------
+
+5.Question: Is there a destructor for Java?
+
+A. No, Because Java is a garbage collected language, you cannot predict when (or even if)
+an object will be destroyed.
+B. Yes, Java is quite mature as a language and memory leak can be fixed.
+
+C. Java objects are heap allocated and garbage collected, that's why destructor used in
+java.
+D. None of the above.
+
+Answer: D.None of the above.
+-------------------------------------------------------------------------------------------------------
+
+6.Question: Read carefully below code and identify the correct answer?
+
+public class ClassMain {
+public static void main(String[] args) {
+String main = "main is incorrect defined";
+System.out.println(main);
+}
+}
+
+A. Yes, it compiles and execute because, the character sequence "main" is an identifier.
+B. No, because main is a keyword/reserve word in java.
+C. It does not compile.
+D. In Java, Main keyword is not used twice.
+
+Answer:A.Yes, it compiles and execute because, the character sequence "main" is an identifier.
+-----------------------------------------------------------------------------------------------------------
+
+7.Question: Read the given below code and identify correct Output?
+
+class MyProgram {
+int count = 0;
+public static void main(String[] args) {
+System.out.println(count);
+}
+}
+Output :-
+A. null.
+B. 0.
+C. Error.
+D. None of the above.
+
+Answer:C. Error.
+Explanation:non-static variable count cannot be referenced from a static context.
+-----------------------------------------------------------------------------------------------------
+
+8.Question: How many Objects created in the below code?
+
+class X {
+X() {
+System.out.println(this.hashCode());
+}
+}
+class Y extends X {
+Y() {
+System.out.println(this.hashCode());
+}
+}
+public class TestClass {
+public static void main(String[] args) {
+Y y = new Y();
+System.out.println(y.hashCode());
+}
+}
+
+Output :-
+A. 3.
+B. 2.
+C. 1.
+D. None of the above.
+
+Answer:D. None of the above.
+Explantiom: Invalid method declaration.
+-------------------------------------------------------------------------------------------------------------------------
+
+9.Question: What is the correct output of the given code?
+
+public class Test {
+public static double calculation(double a, double b) {
+if (a == b) {
+return 0;
+} else {
+return 2 / (a - b);
+}
+}
+public static void main(String[] args) {
+double d1 = Double.MIN_VALUE;
+double d2 = 2.0 * Double.MIN_VALUE;
+System.out.println("Result: " + calculation(d1, d2));
+}
+}
+Output :-
+A. 0.0
+B. 0
+C. Error
+D. -Infinity
+Answer:D. -Infinity
+---------------------------------------------------------------------------------------------------------
+10.Question: What is the correct answer of the below code?
+
+public class Test {
+public static void main(String[] args) {
+int j = 0;
+if ((8 > 4) | (j++ == 7))
+System.out.println("j = " + j);
+
+}
+}
+
+Output :-
+A. 0
+B. 1
+C. 2
+D. ArithmeticException (Divided by zero)
+
+Answer:B.1
+Explanation: Increment the value zero to 1.
+----------------------------------------------------------------------------------
+
+11.Question: What is the output of below code?
+
+public class Test {
+public static void main(String[] args) {
+int[] array = { 1, 2, 3, 4, 5 };
+int sum = 0;
+for (int i : array)
+sum += ++i;
+System.out.println(--sum);
+}
+}
+
+Output :-
+A. 15
+B. 16
+C. 20
+D. 19
+
+Answer:D.19
+Explantion: first increment and then at that time decrement also.
+-------------------------------------------------------------------------------
+
+12.Question: Find Out the correct output of the given code?
+
+public class MathTest {
+public void main(String[] args) {
+int x = 10 * 10 - 10;
+System.out.println(++x);
+}
+}
+
+Output :-
+A. 0
+B. 90
+C. 91
+D. Runtime Error
+
+Answer:C.Runtime Error
+Explanation: Main method is not static in class MathTest,define the main method as: public static void main(String[] args)
+---------------------------------------------------------------------------------------------------------
+
+   13.Question: Can we create a user defined immutable class, pick the correct option?
+
+Output :-
+A. Make the class as final and
+B. Make the data members as private and final.
+C. Both A and B are Correct
+D. None of the above
+Answer:C. Both A and B are Correct
+------------------------------------------------------------------------------------------
+
+14.Question: How to define Vector class?
+
+Output :-
+A. Synchronized and Non-serialized
+B. Non-Synchronized and Serialized.
+C. Both A and B are Correct
+D. None of the above
+
+Answer:A. Synchronized and Non-serialized
+--------------------------------------------------------------------------------------------------------
+
+15.Question: What is the output of the below code?
+
+public class TestString1 {
+public static void main(String[] args) {
+String str = "420";
+str += 42;
+System.out.print(str);
+}
+}
+
+Output :-
+A. 420
+B. 42042.
+C. Compilation fails
+D. An exception is thrown at runtime
+
+Answer:B. 42042
+Explantion: String Concatination.
+-----------------------------------------------------------------------------
+16.Question: What is the output of the below code?
+
+class Test {
+public static void main(String[] args) {
+int x = 0;
+int y = 10;
+do {
+y--;
+++x;
+} while (x < 5);
+System.out.print(x + "," + y);
+}
+}
+
+Output :-
+A. 5, 6
+B. 5, 5.
+C. 6, 5
+D. Error
+Answer:B. 5, 5.
+Explanation:Execution done first after that check the condition.
+--------------------------------------------------------------------------
+
+17.Question: What definition exactly match for abstract class? ?
+
+Output :-
+A. public abstract class A {
+public Bark speak();
+}
+B. public abstract class A {
+public Bark speak() {
+}
+}
+C. public class A {
+
+public abstract Bark speak();
+}
+D. public class A abstract{
+
+public abstract Bark speak();
+}
+
+Answer:A. public abstract class A {
+public Bark speak();
+}
+----------------------------------------------------------------------------------------------------
+
+18.Question: Read the below code and pick correct option?
+
+class LoopTestDemo {
+public static void main(String[] args) {
+int x = 12;
+while (x < 10) {
+x--;
+}
+System.out.print(x);
+}
+}
+
+Output :-
+A. 11
+B. 10
+C. 12
+D. 9
+
+
+Answer: C.12
+Explanation: condition does not matched.
+--------------------------------------------------------------------
+
+19.Question: Read the below code and pick correct option?
+
+class BitwiseTestDemo {
+public static void main(String[] args) {
+int x = 5;
+int y = 7;
+System.out.print(((y * 2) % x));
+System.out.print(" " + (y % x));
+}
+}
+
+Output :-
+A. 6, 8
+B. 7, 9
+C. 4, 6
+D. 4, 2
+
+Answer:D. 4, 2
+------------------------------------------------------------------------------------
+
+20.Question: Read the below code and pick correct option?
+
+class TestFormatSpecifier {
+static final long num = 343L;
+static long testMethod(long num) {
+System.out.print(++num + " ");
+return ++num;
+}
+public static void main(String[] args) {
+System.out.print(num + " ");
+final long num = 340L;
+new TestString1().testMethod(num);
+System.out.println(num);
+}
+}
+Output :-
+A. 343 340 342
+B. 343 341 342
+C. 343 341 340
+D. An exception is thrown at runtime
+
+Answer:D.An error is thrown at compiletime.
+Explanation: error: cannot find symbol
+new TestString1().testMethod(num);
+
+--------------------------------------------------------------------------------------------------
+
+21.Question: Read the below code and pick correct option?
+
+public class TestBooleanDemo {
+public static void main(String[] args) {
+int x = 5;
+boolean b1 = true;
+boolean b2 = false;
+if ((x == 4) && !b2)
+System.out.print("1 ");
+System.out.print("2 ");
+if ((b2 = true) && b1)
+System.out.print("3 ");
+
+}
+}
+
+Output :-
+A. 2, 3
+B. 1, 2
+C. 3, 2
+D. An exception is thrown at runtime
+
+Answer: A. 2, 3
+
+-------------------------------------------------------------------------------------------------------
+
+22.Question: Read the below code and pick correct option?
+
+public class Test {
+public void main(String[] args) {
+int x = 6;
+Test test = new Test();
+test.doSomething(x);
+System.out.print(" main x = " + x);
+}
+void doSomething(int x) {
+System.out.print(" method x = " + x++);
+}
+}
+Output :-
+A. An exception is thrown at runtime
+B. method x = 6, main x = 6
+C. method x = 6 main x = 7
+D. method x = 7 main x = 6
+
+Answer:A. An exception is thrown at runtime
+Explanation: Main method is not static in class Test,  define the main method as: public static void main(String[] args)
+-------------------------------------------------------------------------------------------------------------------------------
+
+23.Question: Read the below code and pick correct option?
+
+class TernanryTestDemo {
+public static void main(String[] args) {
+int i = 42;
+String str = (i < 40) ? "Computer" : (i > 50) ? "Java" : "Everything";
+System.out.println(str);
+}
+}
+
+Output :-
+A. An exception is thrown at runtime
+B. Computer
+C. Java
+D. Everything
+
+Answer:D. Everything
+----------------------------------------------------------------------------------------------------------
+
+24.Question: Read the below code and pick correct option?
+
+class ExceptionTestDemo {
+public static void main(String[] args) {
+Float valuePie = new Float(3.14f);
+try {
+if (valuePie > 3)
+System.out.print("Pie value is greater than 3"+", ");
+else
+System.out.print("Pie value is not greater than 3"+", ");
+
+} catch (Exception e) {
+e.printStackTrace();
+} finally {
+System.out.println ("Have a nice day.");
+}
+}
+}
+Output :-
+A. Pie value is not greater than 3, Have a nice day.
+B. Pie value is greater than 3, Have a nice day.
+C. Pie value is not greater than 3.
+D. An exception is thrown at runtime.
+
+Answer:B. Pie value is greater than 3, Have a nice day.
+----------------------------------------------------------------------------------------------------------
+
+25.Question: Read the below code and pick correct option?
+
+class TernaryDemo {
+public static void main(String[] args) {
+int a = 8;
+System.out.println ("" + (int) ((a < 8) ? 9.9 : 9));
+}
+}
+Output :-
+A. 9.9
+B. 0.
+C. 9.
+D. Error.
+
+Answer:C.9
+Explanation:Default value
+----------------------------------------------------------------------------------------------------------
+
+26.Question: Read the below code and pick correct option?
+
+class TestDoubleDemo {
+public static long round(double a) {
+if (a != 0x1.fffffffffffffp-2) {
+return (long)Math.floor(a + 0.5d);
+} else {
+return 0;
+}
+}
+public static void main(String[] args) {
+TestDoubleDemo t = new TestDoubleDemo();
+t.round(2.5);
+}
+}
+Output :-
+A. 3
+B. 0.
+C. -1.
+D. None of the above.
+
+Answer:D. None of the above.
+-------------------------------------------------------------------------------------------------------------
+
+27.Question: Create a parent class as below
+
+class A {
+private int a = 0;
+}
+Which one is tightly encapsulated in the below options
+Output :-
+A. class B extends A {
+int a = 0;
+}
+B. class C extends A {
+private int a = 0;
+}
+C. class B extends A {
+static int a = 0;
+}
+D. class C extends A {
+final int a = 0;
+}
+
+Answer:B. class C extends A {
+private int a = 0;
+}
+-------------------------------------------------------------------------------------------------------------
+
+28.Question: Cyclic inheritance allowed in Java or Not?
+
+class A extends B {
+// some methods
+}
+class B extends A {
+// some methods
+}
+
+A. No, Not Allowed.
+B. Yes, Definitely Allowed.
+C. With Some condition, Allowed
+D. None of the Above
+
+Answer:B. Yes, Definitely Allowed.
+-------------------------------------------------------------------------------------------------------------------
+
+29.Question: Read the below code and find correct output?
+
+public class Main {
+public static void main(String[] args) {
+Integer x = 400, y = 400;
+if (x == y)
+System.out.println("Number is Same");
+else
+System.out.println("Number is Not Same");
+
+}
+}
+A. Number is Same
+B. Number is Not Same
+C. Runtime Exception
+D. None of the Above
+--------------------------------------------------------------------------------------------------------------------
+Answer:B. Number is Not Same
